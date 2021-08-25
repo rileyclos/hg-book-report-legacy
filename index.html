@@ -1,0 +1,420 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+html {
+  scroll-behavior: smooth;
+}
+   * {
+    margin: 0;
+    padding:  0;
+    font-family: sans-serif;
+   }
+
+   .title {
+     width: 100%;
+     height: 75%;
+     color: white;
+     font-size: 10vw;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-image: url("katniss1.jpeg");
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+       -webkit-user-select: none; /* Safari */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* IE10+/Edge */
+ user-select: none; /* Standard */
+   }
+   .atitle {
+     transition: 500ms;
+     cursor: pointer;
+   }
+   .atitle:hover {
+     letter-spacing: 0.3vw;
+   }
+   .sdcont {
+     position: absolute;
+     top: 60vh;
+     height: 10%;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     font-size: 2vw;
+       -webkit-user-select: none; /* Safari */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* IE10+/Edge */
+ user-select: none; /* Standard */
+   }
+   .sd { transition: 500ms; font-size: 3vh; cursor: pointer }
+   .sd:hover { letter-spacing: 0.1vw }
+   .subtitle { position: absolute; top: 50vh;
+   width: 100%; text-align: center;}
+   .asubtitle {
+     color: white;
+     font-size: 4vw;
+     cursor: pointer;
+     transition: 500ms;
+       -webkit-user-select: none; /* Safari */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* IE10+/Edge */
+ user-select: none; /* Standard */
+   }
+   .asubtitle:hover {
+     letter-spacing: 0.2vw;
+   }
+   .box {
+     display: inline-block;
+     box-sizing: border-box;
+     width: 50%;
+     height: 50%;
+     margin-left: 0;
+     float: left;
+     padding: 20px;
+     overflow: scroll;
+   }
+   .red { background: #50C878; color: white; }
+   .lgrey { background: rgb(234, 234, 234); }
+   .red2 { background: #50C878; color: white; }
+   .lgrey2 { background: rgb(234, 234, 234); }
+   @media only screen and (max-width: 600px) {
+     .box {
+       width: 100%;
+       height: 50%;
+     }
+     .title {
+       height: 100%;
+     }
+     .subtitle {
+       top: 55%;
+     }
+     .sdcont {
+       top: 70vh;
+     }
+   }
+   @media only screen and (min-width: 1000px) {
+     .box {
+       width: 33.3%;
+     }
+     .red2 {
+       background: rgb(234, 234, 234);
+       color: black;
+     }
+     .lgrey2 {
+       background: #50C878;
+       color: white;
+     }
+   }
+   .divider { height: 20px; background: white; }
+   .date {
+     position: absolute;
+     width: 90%;
+     height: 5%;
+     color: white;
+     font-size: 2vw;
+     left: 5%;
+     top: 5%;
+     text-align: right;
+   }
+   .wip {
+     position: absolute;
+     width: 90%;
+     height: 5%;
+     color: white;
+     font-size: 2vw;
+     left: 5%;
+     top: 5%;
+     text-align: left;
+   }
+   .widebox {
+     display: inline-block;
+     width: 100%;
+     height: 50%;
+   }
+   .short {
+     height: 10%;
+   }
+   .minshort {
+     min-height: 10%;
+   }
+   .contentheight {
+     height: auto;
+   }
+   /* Style the tab */
+.tab {
+  text-align: center;
+  overflow: hidden;
+  background: #50C878;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  color: white;
+  background: #50C878;
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 2px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background: rgb(97, 240, 144);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background: rgb(120, 255, 172);
+    color: black;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+.img50 {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+}
+@media only screen and (max-width: 800px) {
+  .img50 {
+    width: 100%;
+    height: 50%;
+  }
+}
+.nopad {
+  padding: 0;
+}
+.nosel {
+    -webkit-user-select: none; /* Safari */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; /* Standard */
+}
+#bookInfo {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: none;
+  position: absolute;
+  left: 0%;
+  top: 70%;
+  color: white;
+  display: none;
+}
+button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: 500ms;
+}
+button.red:hover {
+  background: rgb(90, 220, 120);
+}
+#plot1 {
+  display: none;
+}
+#plot2 {
+  display: none;
+}
+#plot3 {
+  display: none;
+}
+#plot4 {
+  display: none;
+}
+#plot5 {
+  display: none;
+}
+.forward, .backward {
+  transition: 500ms;
+  font-size: 30px;
+  background: none;
+  cursor: pointer;
+  color: #50C878;
+}
+.forward:hover, .backward:hover {
+  color: rgb(90, 220, 120);
+}
+.bg3 {
+  background-image: url("img3.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (min-width: 1000px) {
+  .bg3 {
+    background-image: url("img4.jpeg");
+  }
+}
+a {
+  text-decoration: none;
+}
+.whitetext {
+  color: white
+}
+ </style>
+  </head>
+  <body>
+    <div class=date>Started 08 August 2021</div>
+    <div class=wip>Work In Progress</div>
+    <div class="title">
+      <a class=atitle><b>Katniss </b>Everdeen</a>
+    </div>
+    <div class=subtitle>
+    <a class=asubtitle>From <a role=button onClick=bookInfo() class=asubtitle><b>The Hunger Games</b></a>
+    <div id="bookInfo" class="nopad nosel"><b>The Hunger Games is a book written by Suzanne Collins. It's genre is Dystopian/Science Fiction<b></div>
+      </div>
+    <div class=sdcont><a class="sd whitetext" href="#scrolldown">Scroll Down</a></div>
+    <div class=divider></div>
+    <div class="box red" id=scrolldown>
+      <h1>About the Character</h1><br>
+      Name: Katniss Everdeen<br><br>
+      Gender: Female<br><br>
+      Nickname: Catnip<br><br>
+      Relationship: Taken by Peeta Mellark<br><br>
+
+
+
+    </div><!--
+    --><div class="box lgrey">
+<h1>Brief Plot (Possible Spoilers)</h1><br>
+<button class=red onClick=showPlot() id=plotButtonShow>Show Plot</button>
+<button class=forward id=forward onClick=forward(1)>&#8250;</button>
+<br><br><p style="font-weight: 400; overflow: scroll;" id=plot1><b>Exposition:</b> Katniss lives in <i>District 12</i> at the age of 16. She illegally hunts with her friend Gale past the fence. Every year there is "The Hunger Games" which is a game every district plays where you have to fight to the death. You can find random things around the arena, but the best stuff is in the <i>Cornucopia</i>, which is where most of the killing happens at the beginning of the game.</p>
+<p style="font-weight: 400; overflow: scroll;" id=plot2><b>Rising Action: </b>It's time for the selection of which kids go to the Hunger Games. Katniss's sister has just reached the age to enter the draw for the Games. However, she has the lowest chance out of everyone there. Even though all the odds were in her favour, she got chosen for the Games. Katniss decided to take her sisters place instead because she could bear to see her sister like that. The other kid chosen was Peeta Mellark. Some time passes until the Games really start. Once they do though, Katniss and Peeta have developed an image of romantic relationship. Katniss thought of it as a way to survive, while Peeta thought of it as reality and how he was going to live the last of his life. Katniss truly doesnt know how she feels but she tells herself she doesn't like Peeta. During the games, Katniss and Peeta split up. Katniss befriends a girl from District 11 named Rue. Later on, Katniss is looking for Rue and watches a boy from District 1 kill her. Katniss kills him too late and Rue is now dead. The next day there is an announcement, that there can be two winners from the same district in this year's Games. She looks for Peeta for a while and finds him camoflauged in a swamp. After treating him with some medicine they stick to getting food and water to survive, and they shelter in a little area </p>
+<p style="font-weight: 400; overflow: scroll;" id=plot3><b>Climax: </b>The climax, or turning point, of the story is at the end of the Games. At this point it's Katniss, Peeta, and Cato, a tribute from District 2. After watching Cato getting mauled by wolves with the eyes of the other tributes, Katniss finally shoots his head and kills him. An announcement comes on and says that they were lying earlier and that there can still only be one tribute. Instead of one killing the other, Katniss decides that they should both go down together. They both put poisonous berries in their mouth and are about to swallow but the announcer announces that they can both win. I would say that was the climax because that was the turning point of the story. After that happened the Districts started falling apart and rioting against the Capitol (The main power over the Districts).</p>
+<p style="font-weight: 400; overflow: scroll;" id=plot4><b>Falling Action: </b>After the Games, Katniss and Peeta have to have an interview, and when Haymich wanted a hug from Katniss she knew something was up and when he did he whispered in her ear "Listen up. You’re in trouble. Word is the Capitol’s furious about you showing them up in the arena. The one thing they can’t
+stand is being laughed at and they’re the joke of Panem". He then tells her to keep acting like she loves Peeta and that all her actions were out of love.</p>
+<p style="font-weight: 400; overflow: scroll;" id=plot5><b>Conclusion: </b> On the train ride back, Katniss mentioned that Haymitch had helped her plan out how to survive in the games. This lead to Peeta figuring out that Katniss was only acting like she loved him and that it was all an act to stay alive. Peeta is clearly upset, but doesn't say so. </p>
+</div><div class="box lgrey2 bg3">
+  <a class=atitle style="font-size: 24px; color: white; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)">Peeta Mellark</a>
+  </div><!--
+  --><div class="box red2">
+<h1>Static or Dynamic?</h1><br><br><p style="font-weight: 400;">Katniss Everdeen is a dynamic character. This is true because she changes throughout the book. She learned how to be tougher, smarter, survive on her own better, and how to love.</p>
+</div><div class="box red">
+
+</div><div class="box lgrey">
+
+</div><div class=divider></div>
+
+<div class="widebox red contentheight minshort nopad">
+
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">Images</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  </div>
+
+  <div id="London" class="tabcontent">
+    <h3>Images</h3>
+    <img src="img1.jpeg" alt="Image One" class=img50 /><!--
+ --><img src="img2.jpeg" alt="Image Two" class=img50 />
+  </div>
+
+  <div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+  </div>
+
+  <div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+
+  <script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  function bookInfo() {
+    document.getElementById("bookInfo").style.display = "block"
+  }
+  function showPlot() {
+    document.getElementById("plotButtonShow").innerHTML = "Hide Plot";
+    document.getElementById("plotButtonShow").id = "plotButtonHide";
+    document.getElementById("plotButtonHide").setAttribute( "onClick", "javascript: hidePlot();");
+    document.getElementById("plot1").style.display = "block";
+  }
+  function hidePlot() {
+    document.getElementById("plotButtonHide").innerHTML = "Show Plot";
+    document.getElementById("plotButtonHide").id = "plotButtonShow";
+    document.getElementById("plotButtonShow").setAttribute( "onClick", "javascript: showPlot();");
+    document.getElementById("plot1").style.display = "none";
+    document.getElementById("plot2").style.display = "none";
+    document.getElementById("plot3").style.display = "none";
+    document.getElementById("plot4").style.display = "none";
+    document.getElementById("plot5").style.display = "none";
+  }
+  function forward(n) {
+    if (n == 1) {
+      document.getElementById("plot1").style.display = "none";
+      document.getElementById("plot3").style.display = "none";
+      document.getElementById("plot4").style.display = "none";
+      document.getElementById("plot5").style.display = "none";
+      document.getElementById("plot2").style.display = "block";
+      document.getElementById("forward").setAttribute( "onClick", "javascript: forward(2);");
+      document.getElementById("backward").setAttribute( "onClick", "jacascript: backward(1)");
+    }
+    if (n == 2) {
+      document.getElementById("plot2").style.display = "none";
+      document.getElementById("plot4").style.display = "none";
+      document.getElementById("plot5").style.display = "none";
+      document.getElementById("plot1").style.display = "none";
+      document.getElementById("plot3").style.display = "block";
+      document.getElementById("forward").setAttribute( "onClick", "javascript: forward(3);");
+      document.getElementById("backward").setAttribute( "onClick", "jacascript: backward(2)");
+        }
+    if (n == 3) {
+      document.getElementById("plot3").style.display = "none";
+      document.getElementById("plot5").style.display = "none";
+      document.getElementById("plot1").style.display = "none";
+      document.getElementById("plot2").style.display = "none";
+      document.getElementById("plot4").style.display = "block";
+      document.getElementById("forward").setAttribute( "onClick", "javascript: forward(4);");
+      document.getElementById("backward").setAttribute( "onClick", "jacascript: backward(3)");
+        }
+    if (n == 4) {
+      document.getElementById("plot4").style.display = "none";
+      document.getElementById("plot1").style.display = "none";
+      document.getElementById("plot2").style.display = "none";
+      document.getElementById("plot3").style.display = "none";
+      document.getElementById("plot5").style.display = "block";
+      document.getElementById("forward").setAttribute( "onClick", "javascript: forward(5);");
+      document.getElementById("backward").setAttribute( "onClick", "jacascript: backward(4)");
+        }
+    if (n == 5) {
+      document.getElementById("plot5").style.display = "none";
+      document.getElementById("plot2").style.display = "none";
+      document.getElementById("plot3").style.display = "none";
+      document.getElementById("plot4").style.display = "none";
+      document.getElementById("plot1").style.display = "block";
+      document.getElementById("forward").setAttribute( "onClick", "javascript: forward(1);");
+      document.getElementById("backward").setAttribute( "onClick", "jacascript: backward(5)");
+        }
+    }
+  </script>
+</div>
+    </body>
+</html>
